@@ -8,6 +8,10 @@ Recommended to use:
  - [MUI](https://mui.com/)
  - [Styled Components](https://www.styled-components.com/)
 
+## Instructions
+  - Clone the repository
+  - Install dependencies using `npm install` or `yarn`
+  - Run project
 ## Run project
 
 In the project directory, you can run:
