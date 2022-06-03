@@ -43,10 +43,18 @@ export const USERS = [
   }
 ]
 
+const groupGifts = (arr, gift) => {
+  if(!(gift in arr)) arr[gift] = 1
+  else arr[gift] += 1
+
+  return arr
+}
+
 export const getGifts = () => {
   const gifts = 'bici coche pelota _playstation bici _coche peluche coche bici'
+  const giftsArr = gifts.split(' ')
+  const giftsFilters = giftsArr.filter(item => !item.includes('_'))
+  const result = giftsFilters.reduce(groupGifts, {})
 
-  // your code here
-
-  return gifts
+  return result
 }

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Container } from '@mui/material'
 import { useFlasher } from '../utils/hooks'
 
 const FourthChallenge = () => {
@@ -6,13 +7,13 @@ const FourthChallenge = () => {
   const [ name, setName ] = useState('John Doe')
 
   return (
-    <>
+    <Container>
       <input onChange={e => setName(e.target.value)} placeholder='Name' value={name} />
       <NameDisplay name={name} />
       <hr />
       <input onChange={e => setAge(Number(e.target.value))} placeholder='Age' value={age} />
       <AgeDisplay length={age} />
-    </>
+    </Container>
   )
 }
 
