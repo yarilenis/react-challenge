@@ -2,7 +2,7 @@ import { Container, Typography } from '@mui/material'
 
 const ThirdChallenge = () => {
   return (
-    <Container>
+    <Container sx={{ mt: 10 }}>
       <Typography fontWeight='bold' variant='h5'>Hola Yarilenis ;)</Typography>
     </Container>
   )

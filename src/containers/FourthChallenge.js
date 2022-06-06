@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, memo } from 'react'
 import { Container } from '@mui/material'
 import { useFlasher } from '../utils/hooks'
 
@@ -6,18 +6,28 @@ const FourthChallenge = () => {
   const [ age, setAge ] = useState(3)
   const [ name, setName ] = useState('John Doe')
 
+  const handleName = (event) => {
+    const name = event.target.value
+    setName(name)
+  }
+
+  const handleAge = (event) => {
+    const age = Number(event.target.value)
+    setAge(age)
+  }
+
   return (
-    <Container>
-      <input onChange={e => setName(e.target.value)} placeholder='Name' value={name} />
+    <Container sx={{ mt: 10 }}>
+      <input onChange={e => handleName(e)} placeholder='Name' value={name} />
       <NameDisplay name={name} />
       <hr />
-      <input onChange={e => setAge(Number(e.target.value))} placeholder='Age' value={age} />
+      <input onChange={e => handleAge(e)} placeholder='Age' value={age} />
       <AgeDisplay length={age} />
     </Container>
   )
 }
 
-const AgeDisplay = ({ length }) => {
+const AgeDisplay = memo(({ length }) => {
   const myRef = useFlasher()
 
   return (
@@ -25,9 +35,9 @@ const AgeDisplay = ({ length }) => {
       <p>Age: {length}</p>
     </div>
   )
-}
+})
 
-const NameDisplay = ({ name }) =>  {
+const NameDisplay = memo(({ name }) =>  {
   const myRef = useFlasher()
 
   return (
@@ -35,6 +45,6 @@ const NameDisplay = ({ name }) =>  {
       <p>Your name is: {name}</p>
     </div>
   )
-}
+})
 
 export default FourthChallenge

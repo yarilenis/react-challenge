@@ -58,3 +58,11 @@ export const getGifts = () => {
 
   return result
 }
+
+export const filterUser = (users, filter) => {
+  let usersFilter = [ ...users ]
+  if(filter === 1) usersFilter.sort((a, b) => a.age - b.age)
+  if(filter === 2) usersFilter.sort((a, b) => b.age - a.age)
+
+  return usersFilter
+}

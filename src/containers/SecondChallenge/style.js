@@ -5,8 +5,7 @@ export const Search = styled.div({
   backgroundColor: 'white',
   border         : '1px solid #ccc',
   borderRadius   : '4px',
-  marginLeft     : 0,
-  marginRight    : '1rem',
+  margin         : '8px',
   position       : 'relative',
   width          : '50%'
 })
@@ -23,6 +22,7 @@ export const SearchIconWrapper = styled.div({
 
 export const StyledInputBase = styled(InputBase)(() => ({
   '& .MuiInputBase-input': {
+    height     : '30px',
     padding    : '0.5rem, 0.5rem, 0.5rem, 0',
     paddingLeft: '3rem',
     width      : '100%'
